@@ -10,4 +10,4 @@ jobs:
       - name: "Install clang-format"
         run: sudo apt install clang-format
       - name: "Run clang-format"
-        run: clang-format src/* tests/* --dry-run -Werror
+        run: clang-format *.cpp *.hpp --dry-run -Werror
