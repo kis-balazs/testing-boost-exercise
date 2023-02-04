@@ -17,8 +17,8 @@ struct MatrixIOFixture {
     size = 3;
   }
 
-  MatrixXd mat;
-  int size;
+  MatrixXd  mat;
+  int       size;
 };
 
 BOOST_FIXTURE_TEST_SUITE(MatrixIOTests, MatrixIOFixture)
