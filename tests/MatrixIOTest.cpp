@@ -23,7 +23,11 @@ BOOST_AUTO_TEST_CASE(MyOnlyTest)
   matrixIO::saveData("../data/text.csv", mat);
 
   MatrixXd output = matrixIO::openData("../data/text.csv", 3);
-  BOOST_TEST(mat == output);
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      BOOST_TEST(mat(i, j) == output(i, j));
+    }
+  }
 }
 
 BOOST_AUTO_TEST_SUITE_END()
