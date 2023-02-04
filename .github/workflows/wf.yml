@@ -18,8 +18,9 @@ jobs:
       - name: "Install dependencies"
         run: sudo apt-get install cmake libyaml-cpp-dev libeigen3-dev libboost-test-dev
       - name: "CMake"
-        run: |
-          mkdir build && cd build && cmake .. && make
+        run: mkdir build && cd build && cmake ..
+      - name: "Make"
+        run: cd build && make
 
   test:
     runs-on: ubuntu-latest
@@ -29,7 +30,8 @@ jobs:
       - name: "Install dependencies"
         run: sudo apt-get install cmake libyaml-cpp-dev libeigen3-dev libboost-test-dev
       - name: "Cmake"
-        run: |
-          mkdir build && cd build && cmake .. && make
+        run: mkdir build && cd build && cmake ..
+      - name: "Make"
+        run: cd build && make
       - name: "Test"
         run: cd build && make test

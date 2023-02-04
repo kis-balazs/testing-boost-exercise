@@ -17,8 +17,8 @@ struct MatrixIOFixture {
     size = 3;
   }
 
-  MatrixXd  mat;
-  int       size;
+  MatrixXd mat;
+  int size;
 };
 
 BOOST_FIXTURE_TEST_SUITE(MatrixIOTests, MatrixIOFixture)
@@ -27,9 +27,7 @@ BOOST_AUTO_TEST_CASE(MyOnlyTest)
 {
   matrixIO::saveData("../data/text.csv", mat);
 
-  MatrixXd output;
-  output = matrixIO::openData("../data/text.csv", size);
-
+  MatrixXd output output = matrixIO::openData("../data/text.csv", size);
   BOOST_TEST(mat == output);
 }
 
